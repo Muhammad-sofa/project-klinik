@@ -3,9 +3,15 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            <h5 class="card-title">Tambah Data Pasien</h5>
             <h3>Form Pasien</h3>
-            <form action="/pasien" method="POST">
+            <form action="/pasien" method="POST" enctype="multipart/form-data">
                 @csrf
+                <div class="form-group mb-3">
+                    <label for="foto">Foto Pasien (jpg, jpeg, png)</label>
+                    <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" id="foto">
+                    <span class="text-danger">{{ $errors->first('foto') }}</span>
+                </div>
                 <div class="form-group mb-3">
                     <label for="nama">Nama Pasien</label>
                     <input id="nama" class="form-control @error('nama') is-invalid @enderror" type="text" name="nama" value="{{ old('nama') }}">
@@ -35,18 +41,6 @@
                     <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat"
                         name="alamat" value="{{ old('alamat') }}">
                     <span class="text-danger">{{ $errors->first('alamat') }}</span>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="alamat_klinik">Alamat Klinik</label>
-                    <input type="text" class="form-control @error('alamat_klinik') is-invalid @enderror" name="alamat_klinik" id="alamat_klinik"
-                        name="alamat_klinik" value="{{ old('alamat_klinik') }}">
-                    <span class="text-danger">{{ $errors->first('alamat_klinik') }}</span>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="kota_klinik">Kota</label>
-                    <input type="text" class="form-control @error('kota_klinik') is-invalid @enderror" name="kota_klinik" id="kota_klinik"
-                        name="kota_klinik" value="{{ old('kota_klinik') }}">
-                        <span class="text-danger">{{ $errors->first('kota_klinik') }}</span>
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
