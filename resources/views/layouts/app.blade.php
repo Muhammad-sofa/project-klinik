@@ -15,6 +15,12 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        .card {
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -41,6 +47,9 @@
                                         <a class="dropdown-item" href="/pasien/create">Tambah Pasien</a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/daftar">Pendaftaran Pasien</a>
                             </li>
                         @endauth
                     </ul>

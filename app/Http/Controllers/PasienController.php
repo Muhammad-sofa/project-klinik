@@ -68,6 +68,12 @@ class PasienController extends Controller
     public function destroy(string $id)
     {
         $pasien = \App\Models\Pasien::findOrFail($id);
+
+        if($pasien->daftar->count() > 0) {
+            flash('Pasien Tidak Bisa Dihapus Karena sudah ada data pendaftaran')->error();
+            return back();
+        }
+
         if ($pasien->foto != null && Storage::exists($pasien->foto)) {
             Storage::delete($pasien->foto);
         }

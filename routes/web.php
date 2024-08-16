@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\DaftarController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,4 +17,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware([Authenticate::class])->group(function() {
     Route::resource('pasien', PasienController::class);
+    Route::resource('daftar', DaftarController::class);
 });
