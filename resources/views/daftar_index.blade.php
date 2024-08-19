@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">Data Pendaftaran Pasien</div>
                     <div class="card-body">
-                        <a href="/daftar/create" class="btn btn-primary btn-sm">
+                        <a href="/daftar/create" class="btn btn-primary btn-sm mt-3">
                             Tambah Data
                         </a>
                         <table class="table table-striped">
