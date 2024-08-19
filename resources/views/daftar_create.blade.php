@@ -11,26 +11,31 @@
                     <span class="text-danger">{{ $errors->first('tanggal_daftar') }}</span>
                 </div>
                 <div class="form-group mt-3">
-                    <label for="pasien_id">Nama Pasien</label>
+                    <label for="pasien_id">Nama Pasien
+                        | <a href="/pasien/create" target="blank">Tambah Pasien</a>
+                    </label>
                     <select name="pasien_id" class="form-control select2">
                         <option value="">-- Pilih Pasien --</option>
                         @foreach($listPasien as $item)
                             <option value="{{ $item->id }}" @selected(old('pasien_id') == $item->id)>
-                                {{ $item->nama }}
+                                {{ $item->no_pasien }} - {{ $item->nama }}
                             </option>
                         @endforeach
                     </select>
                     <span class="text-danger">{{ $errors->first('pasien_id') }}</span>
+                    <div>
+                        Setelah menambahkan data pasien baru, tekan F5
+                    </div>
                 </div>
                 <div class="form-group mt-3">
                     <label for="poli">Poli</label>
-                    <select name="poli" class="form-control">
+                    <select name="poli" class="form-control select2">
                         <option value="">--Pilih Poli --</option>
                         @foreach($listPoli as $key => $val)
                             <option value="{{ $key }}" @selected(old('poli') == $key)>{{ $val }}</option>
                         @endforeach
                     </select>
-                    <span class="text-danger">{{ $errors->first('poli') }}"></span>
+                    <span class="text-danger">{{ $errors->first('poli') }}</span>
                 </div>
                 <div class="form-group mt-3 mb-3">
                     <label for="keluhan">Keluhan</label>
