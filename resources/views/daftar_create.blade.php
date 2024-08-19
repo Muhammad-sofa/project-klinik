@@ -27,7 +27,7 @@
                     <select name="poli" class="form-control">
                         <option value="">--Pilih Poli --</option>
                         @foreach($listPoli as $key => $val)
-                            <option value="{{ $key }}" @selected(old('poli') == $key)>{{ $vall }}</option>
+                            <option value="{{ $key }}" @selected(old('poli') == $key)>{{ $val }}</option>
                         @endforeach
                     </select>
                     <span class="text-danger">{{ $errors->first('poli') }}"></span>

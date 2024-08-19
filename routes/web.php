@@ -19,3 +19,8 @@ Route::middleware([Authenticate::class])->group(function() {
     Route::resource('pasien', PasienController::class);
     Route::resource('daftar', DaftarController::class);
 });
+
+Route::get('logout', function () {
+    Auth::logout();
+    return redirect('login');
+});

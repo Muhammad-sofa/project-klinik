@@ -1,10 +1,10 @@
-@extends('layouts.app', ['title' => 'Tambah Data Pasien'])
+@extends('layouts.app_modern', ['title' => 'Tambah Data Pasien'])
 
 @section('content')
     <div class="card">
+        <h5 class="card-header">Edit Data Pasien : {{ strtoupper($pasien->nama) }}</h5>
         <div class="card-body">
-            <h5 class="card-title">Edit Data Pasien : {{ strtoupper($pasien->nama) }}</h5>
-            <form action="/pasien" method="POST" enctype="multipart/form-data">
+            <form action="/pasien/{{ $pasien->id }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="form-group mb-3">

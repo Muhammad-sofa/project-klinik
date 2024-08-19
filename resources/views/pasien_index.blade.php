@@ -1,6 +1,7 @@
-@extends('layouts.app', ['title' => 'Data Pasien'])
+@extends('layouts.app_modern', ['title' => 'Data Pasien'])
 @section('content')
      <div class="card">
+          <h5 class="card-header">Data Pasien</h5>
           <div class="card-body">
                <h3>Data Pasien</h3>
                <a href="/pasien/create" class="btn btn-primary">Tambah Data</a>
@@ -9,6 +10,7 @@
                          <tr>
                               <th>NO</th>
                               <th>No Pasien</th>
+                              <th>Foto</th>
                               <th>Nama</th>
                               <th>Umur</th>
                               <th>Jenis Kelamin</th>
@@ -37,7 +39,7 @@
                                              @method('DELETE')
                                              <button class="btn btn-danger btn-sm ml-2"
                                                   onclick="return confirm('Apakah anda yakin ingin menghapus data ini ?')">
-                                                  Hapus Data Yang ingin dihapus
+                                                  Hapus
                                              </button>
                                         </form>
                                    </td>

@@ -74,6 +74,8 @@ class DaftarController extends Controller
      */
     public function destroy(Daftar $daftar)
     {
-        //
+        $daftar->delete();
+        flash('Data Berhasil Dihapus')->success();
+        return back();
     }
 }
