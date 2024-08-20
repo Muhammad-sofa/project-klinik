@@ -21,7 +21,7 @@ class PasienController extends Controller
     public function store(Request $request)
     {
         $requestData = $request->validate([
-            'no_pasien' => 'required|unique:pasiens, no_pasien',
+            'no_pasien' => 'required|unique:pasiens,no_pasien',
             'nama' => 'required|min:3',
             'umur' => 'required|numeric',
             'jenis_kelamin' => 'required|in:laki-laki,perempuan',
@@ -34,7 +34,8 @@ class PasienController extends Controller
         $pasien->foto = $request->file('foto')->store('public');
         $pasien->save();
 
-        return back()->with('pesan', 'Data Berhasil Disimpan');
+        flash('Data sudah disimpan')->success();
+        return back();
     }
 
     public function edit(string $id)
