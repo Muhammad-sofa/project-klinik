@@ -73,6 +73,15 @@
                 <span class="hide-menu">Laporan Data Pasien</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link {{ request()->is('laporan-daftar') ? 'active' : '' }}"
+                href="/laporan-daftar/create" aria-expanded="false">
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Laporan Data Pasien</span>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- End Sidebar navigation -->
