@@ -5,6 +5,16 @@
                     <div class="card-header">Data Pendaftaran</div>
                     <div class="card-body">
                         <h3>Data Pendaftaran</h3>
+                        <form action="">
+                            <div class="row g-3 mb-2">
+                                <div class="col">
+                                    <input type="text" name="q" class="form-control" placeholder="Nama atau Nomor Pasien" value="{{ request('q') }}">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Cari</button>
+                                </div>
+                            </div>
+                        </form>
                         <a href="/daftar/create" class="btn btn-primary btn-sm mt-3">
                             Tambah Data
                         </a>
