@@ -7,9 +7,15 @@ use Illuminate\Support\Facades\Storage;
 
 class PasienController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data['pasien'] = \App\Models\Pasien::latest()->paginate(10);
+        // $data['pasien'] = \App\Models\Pasien::latest()->paginate(10);
+        // return view('pasien_index', $data);
+        $pasien = \App\Models\Pasien::latest()->paginate(10);
+        if (request()->wantsJson()) {
+            return response()->json($pasien);
+        }
+        $data['pasien'] = $pasien;
         return view('pasien_index', $data);
     }
 
@@ -33,6 +39,10 @@ class PasienController extends Controller
         $pasien->fill($requestData);
         $pasien->foto = $request->file('foto')->store('public');
         $pasien->save();
+
+        if ($request->wantsJson()) {
+            return response()->json($pasien);
+        }
 
         flash('Data sudah disimpan')->success();
         return back();

@@ -62,7 +62,7 @@
                                              </tr>
                                              <tr>
                                                   <th>Poli</th>
-                                                  <td>: {{ $daftar->poli }}</td>
+                                                  <td>: {{ $daftar->poli->nama }}</td>
                                              </tr>
                                              <tr>
                                                   <th>Keluhan</th>

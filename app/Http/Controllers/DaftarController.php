@@ -22,12 +22,8 @@ class DaftarController extends Controller
     public function create()
     {
         $data['listPasien'] = \App\Models\Pasien::orderBy('nama', 'asc')->get();
-        $data['listPoli'] = [
-            'Poli Umum' => 'Poli Umum',
-            'Poli Gigi' => 'Poli Gigi',
-            'Poli Kandungan' => 'Poli Kandungan',
-            'Poli Anak' => 'Poli Anak',
-        ];
+        $data['listPoli'] = \App\Models\Poli::orderBy('nama', 'asc')->get();
+
         return view('daftar_create', $data);
     }
 
@@ -45,7 +41,7 @@ class DaftarController extends Controller
 
         $daftar = new Daftar();
         $daftar->fill($requestData);
-        $daftar->dave();
+        $daftar->save();
         flash('Data Berhasil Disimpan')->success();
         return back();
     }
@@ -55,7 +51,7 @@ class DaftarController extends Controller
      */
     public function show($id)
     {
-        $data['daftar'] = \App\Models\Daftar::findOrFail($id);
+        $data['daftar'] = Daftar::findOrFail($id);
         return view('daftar_show', $data);
     }
 
@@ -77,7 +73,7 @@ class DaftarController extends Controller
             'diagnosis' => 'required',
         ]);
 
-        $daftar = \App\Models\Daftar::findOrFail($id);
+        $daftar = Daftar::findOrFail($id);
         $daftar->fill($requestData);
         $daftar->save();
         flash('Data Berhasil Disimpan')->success();
@@ -87,8 +83,9 @@ class DaftarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Daftar $daftar)
+    public function destroy($id)
     {
+        $daftar = Daftar::findOrFail($id);
         $daftar->delete();
         flash('Data Berhasil Dihapus')->success();
         return back();

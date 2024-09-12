@@ -31,12 +31,10 @@
                                         <td>{{ $item->keluhan }}</td>
                                         <td>
                                             <a href="/daftar/{{ $item->id }}" class="btn btn-info btn-sm">Detail</a>
-                                            <form action="/daftar/{{ $item->id }}" method="post" class="d-inline">
+                                            <form action="/daftar/{{ $item->id }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button class="btn btn-danger btn-sm ml-2"
-                                                    onclick="return confirm('Apakah anda yakin ingin menghapus data ini ?')">Hapus
-                                                </button>
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin ?')">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>
