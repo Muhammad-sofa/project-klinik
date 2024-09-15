@@ -5,7 +5,7 @@
                <div class="row justify-content-center">
                     <div class="col-md-12">
                          <div class="card">
-                              <div class="card-header">Data Pendaftaran {{ $strtoupper($daftar->pasien->nama) }}</div>
+                              <div class="card-header">Data Pendaftaran {{ strtoupper($daftar->pasien->nama) }}</div>
                               <div class="card-body">
                                    <h4>Data Pasien</h4>
                                    <table width="100%">

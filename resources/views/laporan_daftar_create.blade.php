@@ -22,9 +22,10 @@
                                         <select name="poli" class="form-control">
                                             <option value="">--Semua Data--</option>
                                             @foreach ($listPoli as $key => $val)
-                                            <option value="{{ $key }}" selected(old('poli') == $key)>
-                                                {{ $val }}
-                                            </option>
+                                                <option value="{{ $key }}" selected(old('poli') == $key)>
+                                                    {{ $val }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

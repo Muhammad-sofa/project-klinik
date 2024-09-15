@@ -16,6 +16,12 @@
                                     <label for="tanggal_akhir">Tanggal Daftar Akhir</label>
                                     <input type="date" name="tanggal_akhir" class="form-control">
                                 </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="tanggal_dimulai">Tanggal Dimulai</label>
+                                    <input type="date" name="tanggal_dimulai" class="form-control">
+                                </div>
+
                                 <div class="form-group col-md-4">
                                     <label for="jenis_kelamin">Jenis Kelamin</label>
                                     <select name="jenis_kelamin" class="form-control">

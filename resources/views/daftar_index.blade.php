@@ -39,14 +39,15 @@
                                         <td>{{ $item->tanggal_daftar }}</td>
                                         <td>{{ $item->poli->nama }}</td>
                                         <td>{{ $item->keluhan }}</td>
-                                        <td>
-                                            <a href="/daftar/{{ $item->id }}" class="btn btn-info btn-sm">Detail</a>
-                                            <form action="/daftar/{{ $item->id }}" method="POST" class="d-inline">
+                                        <td class="d-flex">
+                                            <a href="/daftar/{{ $item->id }}" class="btn btn-info btn-sm me-1">Detail</a>
+                                            <form action="/daftar/{{ $item->id }}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin ?')">Hapus</button>
                                             </form>
                                         </td>
+                                        
                                     </tr>
                                 @endforeach
                             </tbody>

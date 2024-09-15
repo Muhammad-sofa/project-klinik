@@ -17,7 +17,7 @@ class DaftarController extends Controller
         }else {
             $data['daftar'] = \App\Models\Daftar::latest()->paginate(10);
         }
-        return view('daftar_index', compact('daftar'));
+        return view('daftar_index', $data);
     }
 
     /**

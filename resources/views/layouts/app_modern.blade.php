@@ -79,7 +79,7 @@
                 <span>
                   <i class="ti ti-user"></i>
                 </span>
-                <span class="hide-menu">Laporan Data Pasien</span>
+                <span class="hide-menu">Laporan Daftar Pasien</span>
               </a>
             </li>
           </ul>
