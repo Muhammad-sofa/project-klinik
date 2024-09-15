@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Poli;
 use App\Models\Daftar;
 use Illuminate\Http\Request;
 
@@ -43,7 +44,9 @@ class DaftarController extends Controller
             'keluhan' => 'required',
         ]);
 
+        $poli = Poli::findOrFail($requestData['poli_id']);
         $daftar = new Daftar();
+        $daftar->biaya = $poli->biaya;
         $daftar->fill($requestData);
         $daftar->save();
         flash('Data Berhasil Disimpan')->success();

@@ -37,7 +37,10 @@
                                         <td>{{ $item->pasien->nama }}</td>
                                         <td>{{ $item->pasien->jenis_kelamin }}</td>
                                         <td>{{ $item->tanggal_daftar }}</td>
-                                        <td>{{ $item->poli->nama }}</td>
+                                        <td>
+                                            <div>{{ $item->poli->nama }}</div>
+                                            <div>{{ $item->biaya }}</div>
+                                        </td>
                                         <td>{{ $item->keluhan }}</td>
                                         <td class="d-flex">
                                             <a href="/daftar/{{ $item->id }}" class="btn btn-info btn-sm me-1">Detail</a>

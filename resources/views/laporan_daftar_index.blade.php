@@ -25,7 +25,7 @@
                     <td>{{ $item->pasien->jenis_kelamin }}</td>
                     <td>{{ $item->tanggal_daftar }}</td>
                     <td>{{ $item->poli->nama }}</td>
-                    <td>{{ $item->poli->biaya }}</td>
+                    <td>{{ $item->biaya }}</td>
                 </tr>
             @endforeach
             <tfoot>
