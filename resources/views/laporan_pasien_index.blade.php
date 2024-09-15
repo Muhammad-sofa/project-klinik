@@ -1,6 +1,9 @@
-@extends('layouts.app_modern')
+@extends('layouts.app_modern_laporan')
 @section('content')
-     <h3>Laporan Data Pasein</h3>
+     <div class="text-center">
+          <h3>LAPORAN DATA PASIEN</h3>
+          <p>Laporan Tanggal {{ request('tanggal_mulai') }}</p>
+     </div>
      <table class="table table-bordered">
           <thead>
                <tr>

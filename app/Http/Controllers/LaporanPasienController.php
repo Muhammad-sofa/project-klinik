@@ -26,6 +26,15 @@ class LaporanPasienController extends Controller
             $pasien->where('jenis_kelamin', $request->input('jenis_kelamin'));
         }
 
+        if ($request->filled('umur')) {
+            if ($request->umur == '>=17<=35') {
+                $pasien->where('umur', '>=', 17)->where('umur', '<=', 35);
+            }
+            if ($request->umur == '>=36<=45'){
+                $pasien->where('umur', '>=', 36)->where('umur', '<=', 45);
+            }
+        }
+
         $data['models'] = $pasien->latest()->get();
         return view('laporan_pasien_index', $data);
     }
